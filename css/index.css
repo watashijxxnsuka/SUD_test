@@ -1,0 +1,206 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+  background-color: #181818;
+  color: #e0e0e0;
+}
+nav {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  display: inline;
+}
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+nav ul li a:hover {
+  background-color: #e0e0e0;
+}
+.container {
+  width: 90%;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+.container.dark-mode {
+  background-color: #242424;
+}
+.header {
+  text-align: center;
+  padding: 20px 0;
+}
+.header h1 {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  font-size: 2.5em;
+  color: #333;
+}
+.entry-form, .entry-display, .dashboard, .profile-page, .notifications {
+  margin: 20px 0;
+}
+.entry-form button, .reaction-buttons button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #3897f0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+.entry-form button:hover, .reaction-buttons button:hover {
+  background-color: #287bd1;
+}
+.entry-form textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  font-size: 1em;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  resize: none;
+  font-family: 'Georgia', serif;
+  transition: border-color 0.3s;
+}
+.entry-form textarea:focus {
+  border-color: #3897f0;
+}
+.entry-display, .dashboard, .profile-page, .notifications {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+}
+.entry-display h2, .dashboard h2, .profile-page h2, .notifications h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px 0;
+  color: #333;
+}
+.entry-display p, .dashboard p, .profile-page p, .notifications p {
+  font-family: 'Georgia', serif;
+  background-color: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.reaction-buttons {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.reaction-buttons button {
+  width: 48%;
+}
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3897f0;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
+}
+.dark-mode-toggle:hover {
+  background-color: #287bd1;
+}
+.search-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+.search-filter input[type="text"], .search-filter input[type="date"] {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  width: 48%;
+  transition: border-color 0.3s;
+}
+.search-filter input[type="text"]:focus, .search-filter input[type="date"]:focus {
+  border-color: #3897f0;
+}
+.profile-page {
+  display: none;
+}
+.notifications {
+  display: none;
+}
+.entry-form-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  transition: background-color 0.3s, color 0.3s;
+}
+.entry-form-popup textarea {
+  height: 100px;
+}
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+@media (max-width: 600px) {
+  .container {
+      width: 100%;
+      padding: 10px;
+  }
+  .entry-form textarea {
+      height: 100px;
+  }
+  .reaction-buttons button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  .search-filter input[type="text"], .search-filter input[type="date"] {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+}

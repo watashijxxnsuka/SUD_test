@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Your Diary</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li><a href="#" onclick="showSection('profile')">Profile</a></li>
+            <li><a href="#" onclick="showSection('notifications')">Notifications</a></li>
+            <li><a href="#" onclick="showSection('settings')">Settings</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="header">
+            <h1>Send Your Diary</h1>
+        </div>
+        <div id="home" class="main-section">
+            <div class="search-filter">
+                <input type="text" placeholder="Search diaries...">
+                <input type="date" id="date-filter">
+            </div>
+            <div class="entry-form">
+                <button onclick="showPopup()">Write a Diary</button>
+            </div>
+            <div class="dashboard">
+                <h2>Your Feed</h2>
+                <p>Followed user's diary entry...</p>
+            </div>
+            <div class="entry-display">
+                <h2>Random Diary Entry</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+                <div class="reaction-buttons">
+                    <button>❤️ Like</button>
+                    <button>Follow</button>
+                </div>
+            </div>
+        </div>
+        <div id="profile" class="profile-page">
+            <h2>Your Profile</h2>
+            <p>Profile information and settings...</p>
+        </div>
+        <div id="notifications" class="notifications">
+            <h2>Notifications</h2>
+            <p>You have no new notifications.</p>
+        </div>
+    </div>
+    <div class="popup-overlay" onclick="hidePopup()"></div>
+    <div class="entry-form-popup">
+        <textarea placeholder="Write your diary entry here..."></textarea>
+        <button onclick="sendDiary()">Send Diary</button>
+    </div>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.main-section, .profile-page, .notifications').forEach(function(el) {
+                el.style.display = 'none';
+            });
+            document.getElementById(section).style.display = 'block';
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            document.querySelector('.container').classList.toggle('dark-mode');
+        }
+
+        function showPopup() {
+            document.querySelector('.popup-overlay').style.display = 'block';
+            document.querySelector('.entry-form-popup').style.display = 'block';
+        }
+
+        function hidePopup() {
+            document.querySelector('.popup-overlay').style.display = 'none';
+            document.querySelector('.entry-form-popup').style.display = 'none';
+        }
+
+        function sendDiary() {
+            // 일기 전송 로직 추가
+            alert('Diary sent!');
+            hidePopup();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
